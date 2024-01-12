@@ -1,5 +1,6 @@
 import React,{useState}from 'react'
 import "../Styles/Form.css"
+import SpinWheel from './Spinwheel';
 function Form() {
     const [formData, setFormData] = useState({name: "",email: ""});
     const handleChange = (event) => {
@@ -15,6 +16,7 @@ function Form() {
     
   return (
     <div className='formDiv'>
+       <SpinWheel/>
         <form onSubmit={handleSubmit}>
           <button className='closeButton'>Close</button> <br/>
         <h4> Win Exclusive Discount!</h4> <br/> 

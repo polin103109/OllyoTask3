@@ -1,35 +1,48 @@
 import React, { useState } from 'react';
-import '../Styles/Spinwheel.css'; 
+//import '../Styles/Spinwheel.css'; 
 const SpinWheel = () => {
-  const [rotation, setRotation] = useState(0);
-  const [spinning, setSpinning] = useState(false);
-
-  const handleSpin = () => {
-    if (!spinning) {
-      const randomRotation = Math.floor(Math.random() * 360) + 720; 
-      setRotation(randomRotation);
-      setSpinning(true);
-
-     
-      setTimeout(() => {
-        setSpinning(false);
-      }, 1000);
-    }
-  };
-
-  return (
-    <div>
-      <div
-        className={`wheel ${spinning ? 'spinning' : ''}`}
-        style={{ transform: `rotate(${rotation}deg)` }}
-      >
+    const segments = [
+        "better luck next time",
+        "70% OFF",
+        "won 10",
+        "Sorry!",
+        "5% OFF",
+        "won uber pass",
+        "Not Today"
+      ];
+    
+      const generateRandomColor = () => {
         
-      </div>
-      <button onClick={handleSpin} disabled={spinning}>
-        Spin to Win!
-      </button>
-    </div>
-  );
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+      const generateRandomSegments = () => {
+       
+        return segments.map((segment, index) => (
+          <div key={index} className="number" style={{ backgroundColor: generateRandomColor() }}>
+            {segment}
+          </div>
+        ));
+      };
+    const handleSpin = () => {
+       alert("spinnnnnnn");
+      };
+    
+      return (
+        <div className='wheelContainer'>
+          <button id="spin" onClick={handleSpin}>
+            Spin
+          </button>
+          <div className="wheel">
+          {generateRandomSegments()}
+           
+          </div>
+        </div>
+      )
 };
 
 export default SpinWheel;
