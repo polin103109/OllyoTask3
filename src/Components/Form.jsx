@@ -14,15 +14,14 @@ function Form() {
     
     
   return (
-    <div>
+    <div className='formDiv'>
         <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+          <button className='closeButton'>Close</button> <br/>
+        <h4> Win Exclusive Discount!</h4> <br/> 
+      <input type="text" id="name" placeholder='Enter your name' name="name" value={formData.name} onChange={handleChange}/>
+      <input type="email" id="email" placeholder='Enter your email' name="email" value={formData.email} onChange={handleChange}/>
 
-      <label htmlFor="email">Email:</label>
-      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
-
-      <button type="submit">TRY YOUR LUCK!</button>
+      <button className='submitButton' type="submit">TRY YOUR LUCK!</button>
     </form>
     </div>
   )
