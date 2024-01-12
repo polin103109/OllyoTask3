@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import '../Styles/Spinwheel.css'; 
+import "../Styles/Spinwheel.css";
 const SpinWheel = () => {
     const segments = [
         "better luck next time",
@@ -24,7 +24,7 @@ const SpinWheel = () => {
        
         return segments.map((segment, index) => (
           <div key={index} className="number" style={{ backgroundColor: generateRandomColor() }}>
-            {segment}
+          <span> {segment}</span>  
           </div>
         ));
       };
