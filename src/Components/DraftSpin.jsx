@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../Styles/Draft.css"
 
 const PolygonGenerator = () => {
-  const [inputSize, setInputSize] = useState(200);
+  const [inputSize, setInputSize] = useState('');
   const [numPolygons, setNumPolygons] = useState(2);
   const [polygonColor, setPolygonColor] = useState('lightblue');
   const [polygonText, setPolygonText] = useState('');
@@ -37,21 +37,10 @@ const PolygonGenerator = () => {
     const { x, y } = calculatePolygonPosition(index);
 
     const polygonStyles = {
-      float: 'left',
+      //float: 'left',
       width: `${inputSize}px`,
       height: `${inputSize}px`,
-       margin: ' 20px',
       position:'absolute',
-    //   shapeOutside: `polygon(
-    //     0 0,
-    //     100% 0,
-    //     100% 20%,
-    //     60% 20%,
-    //     60% 100%,
-    //     40% 100%,
-    //     40% 20%,
-    //     0 20%
-    //   )`,
       clipPath: `polygon(
        0 0,
        56% 0,
@@ -60,12 +49,15 @@ const PolygonGenerator = () => {
       )`,
       background: polygonColor,
       transformOrigin: 'bottom right',
-      transform: `translate(${x}px, ${y}px) rotate(45deg)`,
+      display: 'flex',
+      alignItems: 'center', // Fixed typo in 'align-items'
+      justifyContent: 'center',
+      //transform: `translate(${x}px, ${y}px) rotate(45deg)`,
     }
 
     return (
       <div key={index} style={polygonStyles}>
-        <p>{polygonText}</p>
+        <p><span>{polygonText}</span></p>
       </div>
     );
   });
