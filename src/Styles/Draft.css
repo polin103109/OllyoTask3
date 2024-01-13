@@ -1,13 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .wheelCircle{
     background-color: aquamarine;
     position: absolute;
     top:0;
     right: 0;
-    width: 50%; 
-    height: 50%; 
+    width: 100%; 
+    height: 100%; 
     border-radius: 50%;
     margin: 50px;
-    background-color:blue;
+    background-color:#333;
     overflow: hidden;
     box-shadow: 0 0 0 5px #333,
     0 0 0 15px #fff,
@@ -15,9 +20,27 @@
 }
 .wheelCircleContainer{
     position: relative;
-    width: 700px;
-    height: 700px;
+    width: 400px;
+    height: 400px;
+    margin: 100px;
     justify-content: center;
     align-items: center;
     display: flex;
+    
+}
+.spinFormContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(65, 138, 255);
+    width: 500px;
 }
