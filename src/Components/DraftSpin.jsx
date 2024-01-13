@@ -5,6 +5,7 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
   const [inputSize, setInputSize] = useState('');
   const [polygonColor, setPolygonColor] = useState('');
   const [polygonText, setPolygonText] = useState('');
+  const [rotationValue, setRotationValue] = useState(Math.ceil(Math.random() * 3600));
  const addtoSpinWheel = () =>{
     const newPolygon = {
         size: inputSize,
@@ -71,7 +72,10 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
       </div>
     );
   });
-  
+  const playSpin = () => {
+    const newValue = rotationValue + Math.ceil(Math.random() * 3600);
+    setRotationValue(newValue);
+  }
 
   return (
     <div className='spinFormContainer'>
@@ -102,9 +106,10 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
       <button onClick={addtoSpinWheel}>ADD</button>
       </div>
       <div className='wheelCircleContainer'>
-      <div className='wheelCircle' >{polygons}</div>
-
+      <button className='spinButton' onClick={playSpin}>Spin to Win!</button>
+      <div className='wheelCircle'  style={{ transform: `rotate(${rotationValue}deg)`}}>{polygons}</div>
       </div>
+     
     </div>
   );
 };

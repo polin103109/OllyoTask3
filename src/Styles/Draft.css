@@ -17,15 +17,17 @@
     box-shadow: 0 0 0 5px #333,
     0 0 0 15px #fff,
     0 0 0 18px black;
+    transition: transform 3s ease-in-out;
 }
 .wheelCircleContainer{
     position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 100px;
+    width: 600px;
+    height: 600px;
+    margin: 100px; 
     justify-content: center;
     align-items: center;
     display: flex;
+    background-color: aqua;
     
 }
 .spinFormContainer{
@@ -44,3 +46,16 @@
     background-color: rgb(65, 138, 255);
     width: 500px;
 }
+.spinButton{
+    position: absolute;
+    background-color:green;
+    width:60px;
+    height: 60px;
+    border-radius: 5px;
+    z-index: 10;
+    border: 4px solid rgba(0,0,0,0.75);
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    user-select: none;
+} 
