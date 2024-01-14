@@ -7,7 +7,7 @@ function App() {
   const [polygonsData, setPolygonsData] = useState([]);
   return (
     <>
-      {/* <Form/> */}
+      <Form/> 
       <PolygonGenerator polygonsData={polygonsData} setPolygonsData={setPolygonsData}/>
     </>
   )
