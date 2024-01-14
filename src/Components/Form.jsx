@@ -31,10 +31,10 @@ function Form() {
     
   return (
     <div className='formDiv'>
-       <SpinWheel/>
+       {/* <SpinWheel/> */}
         <form onSubmit={handleSubmit}>
           <button className='closeButton'>Close</button> <br/>
-        <h4> Win Exclusive Discount!</h4> <br/> 
+        <h4 className='tagline'>  Win Exclusive Discount!</h4> <br/> 
       <input type="text" id="name" placeholder='Enter your name' name="name" value={formData.name} onChange={handleChange}/>
       {formErrors.name && <p className="error">{formErrors.name}</p>}
 
