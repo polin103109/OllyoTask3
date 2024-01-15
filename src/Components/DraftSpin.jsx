@@ -6,13 +6,27 @@ import "../Styles/Draft.css";
 import MyTable from "./Usertable";
 
 const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
-  const [inputSize, setInputSize] = useState("");
+ // const [inputSize, setInputSize] = useState("");
   const [polygonColor, setPolygonColor] = useState("");
   const [polygonText, setPolygonText] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [wheelRadius, setWheelRadius] = useState("");
   const [rotationValue, setRotationValue] = useState(
     Math.ceil(Math.random() * 3600)
   );
+  useEffect(() => {
+    const sizes = polygonsData.map((polygon) => polygon.size);
+    console.log(sizes)
+    const maxPolygonSize = Math.max(...sizes);
+    console.log(maxPolygonSize)
+    const circumRadius = (maxPolygonSize / 2) / Math.sin(Math.PI / polygonsData.length);
+    console.log(circumRadius)
+    const apothemRadius = circumRadius * Math.cos(Math.PI / polygonsData.length);
+    console.log(apothemRadius)
+    const newWheelRadius = Math.sqrt(circumRadius ** 2 - apothemRadius ** 2);
+    console.log(newWheelRadius);
+    setWheelRadius(newWheelRadius);
+  }, [polygonsData]);
   const addtoSpinWheel = () => {
     const newPolygon = {
       size: inputSize,
@@ -25,11 +39,12 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
  const handleSegments = ()=>{
   setIsModalOpen(true);
  }
-
-  const handleInputChange = (e) => {
-    setInputSize(parseInt(e.target.value, 10) || 0);
-  };
-
+//  const calculateWheelRadius = (numPolygons, polygonsData) => {
+//   const polygons = polygonsData.map((polygon, index) => polygon.size);
+//   console.log(polygons);
+//   return polygons;
+//  };
+ 
   const handleColorChange = (e) => {
     setPolygonColor(e.target.value);
   };
@@ -38,23 +53,8 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
     setPolygonText(e.target.value);
   };
 
-  //   useEffect(() => {
-  //     setNumPolygons(5);
-  //   }, [inputSize]);
-
-  //   const calculatePolygonPosition = (index) => {
-  //     const angle = (360 / numPolygons) * index;
-  //     const radius = 1000;
-
-  //     const x = radius * Math.cos((angle * Math.PI) / 180);
-  //     const y = radius * Math.sin((angle * Math.PI) / 180);
-
-  //     return { x, y };
-  //   };
 
   const polygons = polygonsData.map((polygon, index) => {
-    // const { x, y } = calculatePolygonPosition(index);
-
     const polygonStyles = {
       //float: 'left',
       "--i": index,
@@ -92,15 +92,7 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
     <div className="spinFormContainer">
       <div className="inputDiv">
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <div>
-            <label htmlFor="inputSize">Enter size:</label>
-            <input
-              type="number"
-              id="inputSize"
-              value={inputSize}
-              onChange={handleInputChange}
-            />
-          </div>
+  
           <div>
             <label htmlFor="polygonColor">Enter color:</label>
             <input
