@@ -34,6 +34,23 @@
     justify-content: center;
     
     }
+    .indicator {
+        width: 60px;
+        height: 90px;
+        margin-left: 20px;
+        position: absolute;
+        transform: translate(-50%, -50%) rotate(0deg);
+        transform-origin: bottom;
+        transition: transform 3s ease-out;
+      }
+      .arrowicon{
+        position: absolute;
+        top:60%;
+        right: -535%;
+        font-size: 5rem; /* Adjust the size as needed */
+        color: #007bff;
+        transform: rotate(90deg);
+      }
 .inputDiv{
     display: flex;
     flex-direction: column;

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 import "../Styles/Draft.css"
 
 const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
@@ -107,7 +109,12 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
       </div>
       <div className='wheelCircleContainer'>
       <button className='spinButton' onClick={playSpin}>Spin to Win!</button>
-      <div className='wheelCircle'  style={{ transform: `rotate(${rotationValue}deg)`}}>{polygons}</div>
+      <div className='wheelCircle'  style={{ transform: `rotate(${rotationValue}deg)`}}>
+        {polygons}
+        </div>
+        <div className="indicator">
+        <FontAwesomeIcon className='arrowicon' icon={faArrowAltCircleDown} />
+        </div>
       </div>
      
     </div>
