@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
 import "../Styles/Draft.css";
+import MyTable from "./Usertable";
 
 const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
   const [inputSize, setInputSize] = useState("");
@@ -139,6 +140,7 @@ const PolygonGenerator = ({ polygonsData, setPolygonsData }) => {
           <FontAwesomeIcon className="arrowicon" icon={faArrowAltCircleDown} />
         </div>
       </div>
+  <MyTable/>
     </div>
   );
 };
