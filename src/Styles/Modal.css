@@ -13,6 +13,17 @@
     box-sizing: border-box;
     padding: var(--gap);
   }
+  .close-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px;
+    outline: none;
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+    width: 80px;
+    margin-left: 320px;
+  }
   .modal {
     background: #ffffff;
     max-width: 400px;

@@ -52,6 +52,26 @@
     margin-right: 600px;
     
     }
+.modalbutton{
+    display: inline-block;
+    padding: 6px 12px;
+    background: #009578;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--gap);
+    outline: none;
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: 300px;
+}
     .indicator {
         width: 60px;
         height: 90px;
