@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import { useSpinnerContext } from '../Context/Wheelcontext';
-import SpinWheel from './Spinwheel';
+import { SpinWheel } from './spin-wheel';
+import { UserForm } from '../UserData/UserForm';
+import { SpinnerForm } from './SpinnerForm';
 function SpinnerContainer() {
     const [isSpinnerOpen, setIsSpinnerOpen] = useState(true);
     const { isSpinnerReadyToSpin, setIsSpinnerReadyToSpin } =

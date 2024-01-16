@@ -8,7 +8,7 @@ export const SpinWheel = ({ setIsSpinnerOpen }) => {
     const { setIsSpinning, setIsSpinnerReadyToSpin } = useSpinnerContext();
     const { setUsers } = useUserContext();
 
-    const onFinished = () => {
+    const onFinished = (winner) => {
         if (winner !== undefined) {
             setUsers((prev) => {
                 if (prev.length === 0) return prev;
@@ -32,9 +32,8 @@ export const SpinWheel = ({ setIsSpinnerOpen }) => {
 
     return (
         <>
-            <div className={`${styles.spinnerWheelContainer}`}>
+            <div>
                 <WheelComponent
-                    className={styles.wheel}
                     onFinished={(winner) => onFinished(winner)}
                     isOnlyOnce={false}
                     size={300}
@@ -42,13 +41,9 @@ export const SpinWheel = ({ setIsSpinnerOpen }) => {
                     downDuration={1000}
                     fontFamily="Inter"
                 />
-                <div className={styles.arrow}>
-                    
-                </div>
-                <button>className={styles.editBtn}
-                    isIcon
-                    rounded
-                    onClick={handleEditSpinner}</button>
+                
+                <button 
+                    onClick={handleEditSpinner}>edit</button>
             
                 
             </div>

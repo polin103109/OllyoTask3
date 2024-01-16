@@ -29,8 +29,7 @@
 // export default App
 import { useSpinnerContext } from "./Context/Wheelcontext";
 import SpinnerContainer from "./Components/SpinnerContainer";
-import UserDetails from "./Components/UserDetails";
-
+import { UserDetails } from "./UserData/UserDetails";
 function App() {
   const { isSpinnerReadyToSpin } = useSpinnerContext();
   return (

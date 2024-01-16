@@ -144,12 +144,10 @@ const WheelComponent = ({
 
   const drawNeedle = () => {
     const change = angleCurrent + Math.PI / 2;
-    let i =
-      8 -
-      Math.floor((change / (Math.PI * 2)) * 8) -
-      1;
-    if (i < 0) i = i + 8;
-    currentSegment = i;
+    let i =8 - Math.floor((change / (Math.PI * 2)) * 8) - 1;
+    if (i < 0) 
+    i = i + 8;
+    let currentSegment = i;
   };
 
   const clear = () => {
