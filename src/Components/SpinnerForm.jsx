@@ -1,7 +1,7 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { useSpinnerContext } from "../Context/Wheelcontext";
 import SpinnerContainer from "./SpinnerContainer";
-
+import  "../Styles/spin.scss";
 
 export const SpinnerForm = ({ setIsSpinnerOpen }) => {
     const [selectOptions] = useState([
@@ -52,19 +52,19 @@ export const SpinnerForm = ({ setIsSpinnerOpen }) => {
     };
 
     return (
-        <div className={SpinnerContainer}>
-            <div>
-                <button onClick={() => setIsSpinnerOpen(true)}>  </button>
+        <div className="spinnerContainer">
+            <div className="formHeader">
+                <button onClick={() => setIsSpinnerOpen(true)}> arrow button </button>
                 <div>
-                    <h2 >Spinner</h2>
-                    <p >
+                    <h2 className="title">Spinner</h2>
+                    <p className="subtitle">
                         Customize your spinner and spin it!
                     </p>
                 </div>
             </div>
-            <form >
+            <form className="spinnerForm">
                 {spinnerData.map((segment, index) => (
-                    <div key={segment.id} >
+                    <div key={segment.id} className="formRow" >
                         <input
                             style={{
                                 width: "40%",
@@ -107,7 +107,7 @@ export const SpinnerForm = ({ setIsSpinnerOpen }) => {
                         />
 
                         <button  i
-                            color="danger"
+                            color="red"
                             onClick={() => handleRemoveSegment(segment.id)}>Delete</button>
                             
                         

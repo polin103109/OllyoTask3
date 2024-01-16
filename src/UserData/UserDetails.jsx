@@ -1,18 +1,17 @@
 import { useSpinnerContext } from "../Context/Wheelcontext";
 import { useUserContext } from "../Context/UserContext";
-
-
+import styles from "./userDetails.module.scss";
 export  const UserDetails = () => {
     const { spinnerData } = useSpinnerContext();
     const { users } = useUserContext();
 
     return (
-        <div >
-            <h2 >User Details</h2>
+        <div className={styles.userDetails}>
+            <h2 className={styles.header}>User Details</h2>
 
             {/* User Table */}
 
-            <table >
+            <table  className={styles.userTable}>
                 <thead>
                     <tr>
                         <th>Name</th>

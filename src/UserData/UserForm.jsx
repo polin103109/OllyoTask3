@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpinnerContext } from "../Context/Wheelcontext";
 import { useUserContext } from "../Context/UserContext";
-
+import styles from "./userDetails.module.scss";
 export const UserForm = () => {
     const { setIsSpinning, isSpinning } = useSpinnerContext();
     const { users, setUsers } = useUserContext();
@@ -92,6 +92,7 @@ export const UserForm = () => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 <input
                     required
+                    placeholder="Enter your name"
                     name="name"
                     label="Name"
                     onChange={handleChange}
@@ -101,6 +102,7 @@ export const UserForm = () => {
                 />
                 <input
                     required
+                    placeholder="Enter your mail"
                     name="email"
                     type="email"
                     label="Email"
