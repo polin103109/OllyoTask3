@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from "../Styles/spin.module.scss";
 import { useSpinnerContext } from '../Context/Wheelcontext';
 const WheelComponent = ({
   onFinished,

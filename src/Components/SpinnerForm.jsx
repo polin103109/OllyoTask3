@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpinnerContext } from "../Context/Wheelcontext";
 import SpinnerContainer from "./SpinnerContainer";
-import  "../Styles/spin.scss";
+import styles from "../Styles/spin.module.scss";
 
 export const SpinnerForm = ({ setIsSpinnerOpen }) => {
     const [selectOptions] = useState([
@@ -52,19 +52,19 @@ export const SpinnerForm = ({ setIsSpinnerOpen }) => {
     };
 
     return (
-        <div className="spinnerContainer">
-            <div className="formHeader">
+        <div className="styles.spinnerFormContainer">
+            <div className="styles.formHeader">
                 <button onClick={() => setIsSpinnerOpen(true)}> arrow button </button>
                 <div>
-                    <h2 className="title">Spinner</h2>
-                    <p className="subtitle">
+                    <h2 className="{styles.title}">Spinner</h2>
+                    <p className="styles.subtitle">
                         Customize your spinner and spin it!
                     </p>
                 </div>
             </div>
-            <form className="spinnerForm">
+            <form className="styles.spinnerForm">
                 {spinnerData.map((segment, index) => (
-                    <div key={segment.id} className="formRow" >
+                    <div key={segment.id} className="" >
                         <input
                             style={{
                                 width: "40%",

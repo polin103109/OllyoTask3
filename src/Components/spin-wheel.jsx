@@ -1,7 +1,10 @@
 import React from 'react'
+import styles from "../Styles/spin.module.scss";
 import { useSpinnerContext } from '../Context/Wheelcontext';
 import WheelComponent from './Canvas';
 import { useUserContext } from '../Context/UserContext';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  faArrowAltCircleLeft} from "@fortawesome/free-solid-svg-icons";
 
 
 export const SpinWheel = ({ setIsSpinnerOpen }) => {
@@ -32,8 +35,9 @@ export const SpinWheel = ({ setIsSpinnerOpen }) => {
 
     return (
         <>
-            <div>
+            <div className={`${styles.spinnerWheelContainer}`}>
                 <WheelComponent
+                 className={styles.wheel}
                     onFinished={(winner) => onFinished(winner)}
                     isOnlyOnce={false}
                     size={300}
@@ -41,8 +45,12 @@ export const SpinWheel = ({ setIsSpinnerOpen }) => {
                     downDuration={1000}
                     fontFamily="Inter"
                 />
-                
-                <button 
+                 
+                 <div className={styles.arrow}>
+                       <FontAwesomeIcon className="arrowicon" icon={faArrowAltCircleLeft} />
+                </div>
+               
+                <button lassName={styles.editBtn}
                     onClick={handleEditSpinner}>edit</button>
             
                 
